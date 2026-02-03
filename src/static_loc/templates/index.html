@@ -1,0 +1,50 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Interface</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <div id="chatHistory"></div>
+            <div class="input-container">
+                <div id="inputWrapper">
+                    <textarea id="userInput" placeholder="Type your message here..."></textarea>
+                    <div class="input-buttons">
+                        <button id="micButton" title="Record Audio">🎤</button>
+                        <button id="uploadButton" title="Upload Audio">📤</button>
+                        <input type="file" id="audioUpload" accept="audio/*" style="display: none;">
+                        <button id="submitButton" title="Send Message">⬆</button>
+                        <label for="imageCheckbox">
+                            <input type="checkbox" id="imageCheckbox"> Generate Image
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="history-panel">
+            <h2>Chat History</h2>
+            <ul id="historyList"></ul>
+            <button id="newChatButton">New Chat</button>
+        </div>
+    </div>
+    <div id="loader" class="loader"></div>
+    <div id="errorPopup" class="error-popup">
+        <div class="error-content">
+            <span class="close-button">&times;</span>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.0/lame.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <footer>
+        <a href="https://github.com/Josewathome/speech-text-and-text-speech" target="_blank">by Joseph Wathome 2024</a>
+    </footer>
+</body>
+</html>
